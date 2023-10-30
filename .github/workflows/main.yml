@@ -33,6 +33,9 @@ jobs:
         CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         CLOUDFLARE_LIST_ITEM_LIMIT: ${{ secrets.CLOUDFLARE_LIST_ITEM_LIMIT }}
 
+    - name: Keep alive
+      uses: gautamkrishnar/keepalive-workflow@v1
+
     - name: Create new rules and lists
       run: |
         node cf_list_create.js
